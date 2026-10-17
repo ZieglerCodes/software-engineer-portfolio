@@ -101,7 +101,7 @@ export const projects: Project[] = [
 
     repoLabel: 'Source Code',
 
-    previewMode: 'link',
+    previewMode: 'iframe',
 
     note: 'The public deployment uses fictional demo data. DoorwayPrep is an engineering portfolio project and does not guarantee credit improvement, rental approval, or mortgage approval.',
   },
@@ -141,7 +141,7 @@ export const projects: Project[] = [
 
     repoLabel: 'Source Code',
 
-    previewMode: 'link',
+    previewMode: 'iframe',
 
     note: 'The current public search experience uses synthetic demo records. A licensed live data source would be required before using the application commercially.',
   },
