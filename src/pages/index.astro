@@ -1,19 +1,510 @@
 ---
-const probeLabel = 'Astro → React typed prop';
+import '../styles/global.css';
+
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+import { projects } from '../data/projects';
+
+import { emailHref, phoneHref, site } from '../data/site';
+
+const engineeringCapabilities = [
+  {
+    number: '01',
+    title: 'Full Stack Engineering',
+    description:
+      'Building complete products across interface, application logic, APIs, databases, authentication, and deployment.',
+  },
+  {
+    number: '02',
+    title: 'AI Application Engineering',
+    description:
+      'Turning AI and LLM capabilities into practical product workflows with context, structured state, validation, and useful user experiences.',
+  },
+  {
+    number: '03',
+    title: 'Front End Engineering',
+    description:
+      'Building responsive, accessible interfaces with React, TypeScript, Astro, Tailwind CSS, and modern browser APIs.',
+  },
+  {
+    number: '04',
+    title: 'Software Architecture',
+    description:
+      'Defining system boundaries, data flow, responsibilities, and technical tradeoffs before unnecessary complexity spreads.',
+  },
+  {
+    number: '05',
+    title: 'Automated Testing',
+    description:
+      'Using tools such as Vitest, Playwright, Python test frameworks, and type checking to validate behavior before deployment.',
+  },
+  {
+    number: '06',
+    title: 'CI/CD & Deployment',
+    description:
+      'Using GitHub, automated quality checks, production builds, Netlify, Render, and cloud services to move software from source code to live products.',
+  },
+];
+
+const portfolioSignals = [
+  {
+    number: '01',
+    title: 'Astro',
+    description: 'Static first portfolio architecture',
+  },
+  {
+    number: '02',
+    title: 'TypeScript',
+    description: 'Typed application code',
+  },
+  {
+    number: '03',
+    title: 'React',
+    description: 'Used where interaction requires it',
+  },
+  {
+    number: '04',
+    title: 'Vitest',
+    description: 'Automated code verification',
+  },
+  {
+    number: '05',
+    title: 'Playwright',
+    description: 'Browser level testing',
+  },
+  {
+    number: '06',
+    title: 'Netlify',
+    description: 'Continuous production deployment',
+  },
+];
 ---
 
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta
+      name="description"
+      content="Adam Ziegler is a software engineer building full stack, front end, desktop, and AI powered software products based on real problems encountered in sales and real estate."
+    />
+
+    <meta property="og:title" content="Adam Ziegler | Software Engineer" />
+
+    <meta
+      property="og:description"
+      content="Software products built from real problems in sales, real estate, credit readiness, and lead generation."
+    />
+
+    <meta property="og:type" content="website" />
+
+    <meta name="theme-color" content="#070a0f" />
+
+    <title>Adam Ziegler | Software Engineer</title>
   </head>
-  <body>
-    <main>
-      <h1>Astro</h1>
+
+  <body id="top">
+    <a
+      href="#main-content"
+      class="fixed left-4 top-4 z-[100] -translate-y-24 rounded-lg bg-sky-400 px-4 py-2 font-semibold text-slate-950 transition focus:translate-y-0"
+    >
+      Skip to main content
+    </a>
+
+    <Header />
+
+    <main id="main-content">
+      <!-- HERO -->
+      <section class="relative overflow-hidden">
+        <div
+          aria-hidden="true"
+          class="pointer-events-none absolute left-1/2 top-[-12rem] -z-10 h-[42rem] w-[60rem] -translate-x-1/2 rounded-full bg-sky-500/10 blur-[140px]"
+        ></div>
+
+        <div
+          aria-hidden="true"
+          class="pointer-events-none absolute right-[-10rem] top-40 -z-10 size-[32rem] rounded-full bg-blue-700/10 blur-[130px]"
+        ></div>
+
+        <div class="mx-auto max-w-7xl px-5 pb-24 pt-24 sm:px-6 sm:pb-32 sm:pt-32 lg:px-8 lg:pb-36 lg:pt-36">
+          <div class="grid gap-14 lg:grid-cols-[1fr_22rem] lg:items-end">
+            <div class="max-w-5xl">
+              <div class="inline-flex items-center gap-3 rounded-full border border-sky-400/20 bg-sky-400/5 px-4 py-2">
+                <span
+                  aria-hidden="true"
+                  class="size-2 rounded-full bg-emerald-400 shadow-[0_0_14px_rgba(52,211,153,0.6)]"
+                ></span>
+
+                <span class="font-mono text-xs font-semibold uppercase tracking-[0.17em] text-sky-300">
+                  Software Engineer
+                </span>
+              </div>
+
+              <h1 class="mt-7 max-w-5xl text-5xl font-semibold tracking-[-0.045em] text-white sm:text-6xl lg:text-7xl xl:text-[5.25rem] xl:leading-[0.98]">
+                I build software for problems I've dealt with firsthand.
+              </h1>
+
+              <p class="mt-8 max-w-3xl text-lg leading-8 text-slate-400 sm:text-xl">
+                Sales objections. Credit roadblocks. Lead prospecting. I turned problems I
+                encountered in sales and real estate into working software products.
+              </p>
+
+              <div class="mt-9 flex flex-wrap gap-3">
+                <a
+                  href="#projects"
+                  class="inline-flex min-h-12 items-center justify-center rounded-lg bg-sky-400 px-5 font-semibold text-slate-950 transition hover:bg-sky-300"
+                >
+                  View My Projects
+                </a>
+
+                <a
+                  href="#contact"
+                  class="inline-flex min-h-12 items-center justify-center rounded-lg border border-slate-700 bg-slate-900 px-5 font-semibold text-white transition hover:border-slate-500 hover:bg-slate-800"
+                >
+                  Contact Me
+                </a>
+
+                <a
+                  href={site.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex min-h-12 items-center justify-center rounded-lg px-4 font-semibold text-slate-400 transition hover:text-white"
+                >
+                  GitHub ↗
+                </a>
+              </div>
+            </div>
+
+            <div class="hidden lg:block">
+              <div class="rounded-2xl border border-slate-800 bg-[#0c1119]/90 p-5 shadow-2xl shadow-black/20 backdrop-blur">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                  <span class="font-mono text-xs uppercase tracking-[0.14em] text-slate-500">
+                    Current Focus
+                  </span>
+
+                  <span class="size-2 rounded-full bg-emerald-400"></span>
+                </div>
+
+                <div class="mt-5 space-y-4">
+                  <div>
+                    <p class="text-sm font-semibold text-white">Product Engineering</p>
+
+                    <p class="mt-1 text-xs leading-5 text-slate-500">
+                      Building useful software around real workflows.
+                    </p>
+                  </div>
+
+                  <div>
+                    <p class="text-sm font-semibold text-white">AI Applications</p>
+
+                    <p class="mt-1 text-xs leading-5 text-slate-500">
+                      Applying AI where it improves an actual user outcome.
+                    </p>
+                  </div>
+
+                  <div>
+                    <p class="text-sm font-semibold text-white">Full Stack</p>
+
+                    <p class="mt-1 text-xs leading-5 text-slate-500">
+                      Front end, APIs, data, authentication, testing, and deployment.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-14 grid max-w-4xl gap-px overflow-hidden rounded-2xl border border-slate-800 bg-slate-800 sm:grid-cols-3">
+            <div class="bg-[#0c1119] p-5 sm:p-6">
+              <p class="text-3xl font-semibold tracking-tight text-white">3</p>
+
+              <p class="mt-1 text-sm text-slate-500">Live software projects</p>
+            </div>
+
+            <div class="bg-[#0c1119] p-5 sm:p-6">
+              <p class="text-lg font-semibold text-white">Complete</p>
+
+              <p class="mt-1 text-sm text-slate-500">Sales Copilot desktop application</p>
+            </div>
+
+            <div class="bg-[#0c1119] p-5 sm:p-6">
+              <p class="text-lg font-semibold text-white">Real workflows</p>
+
+              <p class="mt-1 text-sm text-slate-500">Behind every project</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="scroll-mt-20 border-t border-slate-800 py-24 sm:py-28">
+        <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <div class="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
+            <div>
+              <p class="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-sky-400">
+                Selected Work
+              </p>
+
+              <h2 class="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                Projects that started with real problems.
+              </h2>
+            </div>
+
+            <p class="max-w-2xl text-lg leading-8 text-slate-400">
+              I did not build these projects just to fill a portfolio. Each one came from a problem
+              I saw firsthand in sales, real estate, credit readiness, or lead generation.
+            </p>
+          </div>
+
+          <div class="mt-12 space-y-12">
+            {projects.map((project) => (
+              <ProjectCard project={project} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ENGINEERING -->
+      <section
+        id="engineering"
+        class="scroll-mt-20 border-t border-slate-800 bg-[#0a0e15] py-24 sm:py-28"
+      >
+        <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <div class="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
+            <div>
+              <p class="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-sky-400">
+                Engineering
+              </p>
+
+              <h2 class="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                The code matters. So does everything around it.
+              </h2>
+            </div>
+
+            <p class="max-w-2xl text-lg leading-8 text-slate-400">
+              I think about the entire product: who needs it, what the workflow looks like, how the
+              system is structured, how it is tested, and how it gets into a user's hands.
+            </p>
+          </div>
+
+          <div class="mt-12 grid gap-px overflow-hidden rounded-2xl border border-slate-800 bg-slate-800 md:grid-cols-2 xl:grid-cols-3">
+            {engineeringCapabilities.map((capability) => (
+              <article class="group bg-[#0c1119] p-7 transition duration-200 hover:bg-[#111823] sm:p-8">
+                <div class="flex items-center justify-between">
+                  <p class="font-mono text-xs text-sky-400">{capability.number}</p>
+
+                  <span
+                    aria-hidden="true"
+                    class="text-slate-700 transition group-hover:text-sky-400"
+                  >
+                    ↗
+                  </span>
+                </div>
+
+                <h3 class="mt-5 text-lg font-semibold text-white">{capability.title}</h3>
+
+                <p class="mt-3 text-sm leading-6 text-slate-400">{capability.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- PORTFOLIO AS A PROJECT -->
+      <section class="relative overflow-hidden border-t border-slate-800 py-24 sm:py-28">
+        <div
+          aria-hidden="true"
+          class="pointer-events-none absolute left-[-12rem] top-1/2 -z-10 size-[28rem] -translate-y-1/2 rounded-full bg-sky-500/5 blur-[110px]"
+        ></div>
+
+        <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <div class="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+            <div>
+              <p class="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-sky-400">
+                This Site Is Also a Project
+              </p>
+
+              <h2 class="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                You're currently using another piece of my software.
+              </h2>
+
+              <p class="mt-6 max-w-xl text-lg leading-8 text-slate-400">
+                I built this portfolio from scratch instead of starting with a generic developer
+                template. It has its own architecture, responsive interface, automated tests,
+                deployment pipeline, and source repository.
+              </p>
+
+              <div class="mt-8 flex flex-wrap gap-3">
+                <a
+                  href="https://github.com/ZieglerCodes/software-engineer-portfolio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex min-h-11 items-center justify-center rounded-lg border border-slate-700 bg-slate-900 px-4 text-sm font-semibold text-white transition hover:border-sky-400/50 hover:bg-slate-800"
+                >
+                  View Portfolio Source ↗
+                </a>
+              </div>
+            </div>
+
+            <div class="grid gap-3 sm:grid-cols-2">
+              {portfolioSignals.map((signal) => (
+                <div class="rounded-xl border border-slate-800 bg-[#0c1119] p-5 transition duration-200 hover:border-slate-700 hover:bg-[#111823]">
+                  <div class="flex items-start justify-between gap-4">
+                    <span class="font-mono text-xs text-sky-400">{signal.number}</span>
+
+                    <span aria-hidden="true" class="text-xs text-slate-700">
+                      ●
+                    </span>
+                  </div>
+
+                  <p class="mt-4 font-semibold text-white">{signal.title}</p>
+
+                  <p class="mt-1 text-sm leading-6 text-slate-500">{signal.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section
+        id="about"
+        class="scroll-mt-20 border-t border-slate-800 bg-[#0a0e15] py-24 sm:py-28"
+      >
+        <div class="mx-auto grid max-w-7xl gap-12 px-5 sm:px-6 lg:grid-cols-[0.7fr_1.3fr] lg:px-8">
+          <div>
+            <p class="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-sky-400">
+              About
+            </p>
+
+            <h2 class="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+              My business background became an advantage in software.
+            </h2>
+          </div>
+
+          <div class="max-w-3xl">
+            <p class="text-xl leading-9 text-slate-300">
+              Before focusing on software engineering, I spent years in sales, real estate,
+              mortgage, and business development. That gave me a close view of the problems people
+              deal with every day when the software around them is not good enough.
+            </p>
+
+            <p class="mt-6 leading-8 text-slate-500">
+              Sales Copilot came from training salespeople who struggled with objections in the
+              moment. DoorwayPrep came from helping real estate clients who needed a clearer path
+              toward credit readiness. Lead Scraper came from helping my wife prospect for
+              businesses while working in investment real estate.
+            </p>
+
+            <p class="mt-6 leading-8 text-slate-500">
+              That is the kind of engineering work I enjoy most. Find a real problem, understand the
+              workflow, build the product, and keep improving it.
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a
+                href={site.linkedinUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex min-h-11 items-center justify-center rounded-lg border border-slate-700 bg-slate-900 px-4 text-sm font-semibold text-white transition hover:border-slate-500"
+              >
+                LinkedIn ↗
+              </a>
+
+              <a
+                href={site.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex min-h-11 items-center justify-center rounded-lg px-4 text-sm font-semibold text-slate-400 transition hover:text-white"
+              >
+                GitHub ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="scroll-mt-20 border-t border-slate-800 py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <div class="relative overflow-hidden rounded-3xl border border-sky-400/20 bg-gradient-to-br from-sky-400/10 via-[#0c1119] to-[#0c1119] p-8 sm:p-12">
+            <div
+              aria-hidden="true"
+              class="pointer-events-none absolute -right-20 -top-20 size-72 rounded-full bg-sky-400/10 blur-[90px]"
+            ></div>
+
+            <div class="relative grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
+              <div>
+                <p class="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-sky-400">
+                  Contact
+                </p>
+
+                <h2 class="mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                  Looking for a software engineer who understands the product behind the code?
+                </h2>
+
+                <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-400">
+                  I'm interested in software engineering opportunities across front end, full stack,
+                  AI applications, and product engineering.
+                </p>
+
+                <div class="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm">
+                  <a href={emailHref} class="text-slate-400 transition hover:text-white">
+                    {site.email}
+                  </a>
+
+                  <a href={phoneHref} class="text-slate-400 transition hover:text-white">
+                    {site.phoneDisplay}
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-3 lg:max-w-sm lg:justify-end">
+                <a
+                  href={emailHref}
+                  class="inline-flex min-h-12 items-center justify-center rounded-lg bg-sky-400 px-5 font-semibold text-slate-950 transition hover:bg-sky-300"
+                >
+                  Email Me
+                </a>
+
+                <a
+                  href={phoneHref}
+                  class="inline-flex min-h-12 items-center justify-center rounded-lg border border-slate-700 bg-slate-900 px-5 font-semibold text-white transition hover:border-slate-500"
+                >
+                  Call or Text
+                </a>
+
+                <a
+                  href={site.linkedinUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex min-h-12 items-center justify-center rounded-lg border border-slate-700 bg-slate-900 px-5 font-semibold text-white transition hover:border-slate-500"
+                >
+                  LinkedIn
+                </a>
+
+                <a
+                  href={site.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex min-h-12 items-center justify-center rounded-lg border border-slate-700 bg-slate-900 px-5 font-semibold text-white transition hover:border-slate-500"
+                >
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <Footer />
   </body>
 </html>
+```

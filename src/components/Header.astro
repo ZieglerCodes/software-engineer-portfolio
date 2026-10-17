@@ -1,0 +1,140 @@
+---
+import { site } from '../data/site';
+---
+
+<header class="sticky top-0 z-50 border-b border-slate-800/80 bg-[#070a0f]/88 backdrop-blur-xl">
+  <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
+    <a href="#top" aria-label="Adam Ziegler home" class="group flex items-center gap-3">
+      <span class="flex size-9 items-center justify-center rounded-lg border border-slate-700 bg-slate-900 font-mono text-sm font-semibold text-sky-400 transition group-hover:border-sky-400/50 group-hover:bg-slate-800">
+        {site.initials}
+      </span>
+
+      <div class="hidden sm:block">
+        <span class="block text-sm font-semibold text-slate-100">{site.name}</span>
+
+        <span class="block text-[11px] text-slate-500">{site.role}</span>
+      </div>
+    </a>
+
+    <nav aria-label="Primary navigation" class="hidden items-center gap-1 md:flex">
+      <a
+        href="#projects"
+        class="rounded-lg px-3 py-2 text-sm font-medium text-slate-400 transition hover:bg-slate-900 hover:text-white"
+      >
+        Projects
+      </a>
+
+      <a
+        href="#engineering"
+        class="rounded-lg px-3 py-2 text-sm font-medium text-slate-400 transition hover:bg-slate-900 hover:text-white"
+      >
+        Engineering
+      </a>
+
+      <a
+        href="#about"
+        class="rounded-lg px-3 py-2 text-sm font-medium text-slate-400 transition hover:bg-slate-900 hover:text-white"
+      >
+        About
+      </a>
+
+      <a
+        href="#contact"
+        class="rounded-lg px-3 py-2 text-sm font-medium text-slate-400 transition hover:bg-slate-900 hover:text-white"
+      >
+        Contact
+      </a>
+
+      <div class="mx-2 h-5 w-px bg-slate-800" aria-hidden="true"></div>
+
+      <a
+        href={site.linkedinUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="rounded-lg px-3 py-2 text-sm font-medium text-slate-400 transition hover:bg-slate-900 hover:text-white"
+      >
+        LinkedIn
+      </a>
+
+      <a
+        href={site.githubUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm font-semibold text-white transition hover:border-sky-400/50 hover:bg-slate-800"
+      >
+        GitHub ↗
+      </a>
+    </nav>
+
+    <details class="relative md:hidden">
+      <summary class="flex min-h-11 cursor-pointer list-none items-center gap-2 rounded-lg border border-slate-700 bg-slate-900 px-4 text-sm font-semibold text-white transition hover:border-slate-500 hover:bg-slate-800">
+        <span>Menu</span>
+
+        <span aria-hidden="true" class="text-xs text-slate-500">
+          ↓
+        </span>
+      </summary>
+
+      <nav
+        aria-label="Mobile navigation"
+        class="absolute right-0 mt-3 w-64 overflow-hidden rounded-2xl border border-slate-700 bg-[#0c1119] p-2 shadow-2xl shadow-black/40"
+      >
+        <div class="p-2">
+          <p class="text-sm font-semibold text-white">{site.name}</p>
+
+          <p class="mt-1 text-xs text-slate-500">{site.role}</p>
+        </div>
+
+        <div class="my-2 h-px bg-slate-800" aria-hidden="true"></div>
+
+        <a
+          href="#projects"
+          class="block rounded-lg px-4 py-3 text-sm text-slate-300 transition hover:bg-slate-800 hover:text-white"
+        >
+          Projects
+        </a>
+
+        <a
+          href="#engineering"
+          class="block rounded-lg px-4 py-3 text-sm text-slate-300 transition hover:bg-slate-800 hover:text-white"
+        >
+          Engineering
+        </a>
+
+        <a
+          href="#about"
+          class="block rounded-lg px-4 py-3 text-sm text-slate-300 transition hover:bg-slate-800 hover:text-white"
+        >
+          About
+        </a>
+
+        <a
+          href="#contact"
+          class="block rounded-lg px-4 py-3 text-sm text-slate-300 transition hover:bg-slate-800 hover:text-white"
+        >
+          Contact
+        </a>
+
+        <div class="my-2 h-px bg-slate-800" aria-hidden="true"></div>
+
+        <a
+          href={site.linkedinUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block rounded-lg px-4 py-3 text-sm font-medium text-slate-300 transition hover:bg-slate-800 hover:text-white"
+        >
+          LinkedIn ↗
+        </a>
+
+        <a
+          href={site.githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block rounded-lg px-4 py-3 text-sm font-medium text-sky-400 transition hover:bg-slate-800 hover:text-sky-300"
+        >
+          GitHub ↗
+        </a>
+      </nav>
+    </details>
+  </div>
+</header>

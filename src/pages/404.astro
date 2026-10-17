@@ -1,0 +1,78 @@
+---
+import '../styles/global.css';
+
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="noindex" />
+
+    <meta name="theme-color" content="#070a0f" />
+
+    <title>Page Not Found | Adam Ziegler</title>
+  </head>
+
+  <body id="top">
+    <Header />
+
+    <main
+      id="main-content"
+      class="relative mx-auto flex min-h-[72vh] max-w-7xl items-center overflow-hidden px-5 py-24 sm:px-6 lg:px-8"
+    >
+      <div
+        aria-hidden="true"
+        class="pointer-events-none absolute left-1/2 top-1/2 -z-10 size-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-sky-400/10 blur-[120px]"
+      ></div>
+
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-3 rounded-full border border-sky-400/20 bg-sky-400/5 px-4 py-2">
+          <span aria-hidden="true" class="size-2 rounded-full bg-sky-400"></span>
+
+          <span class="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-sky-300">
+            404
+          </span>
+        </div>
+
+        <h1 class="mt-6 text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+          This page isn't here.
+        </h1>
+
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-400">
+          The page may have moved, the URL may be incorrect, or the route may not exist yet.
+        </p>
+
+        <div class="mt-9 flex flex-wrap gap-3">
+          <a
+            href="/"
+            class="inline-flex min-h-12 items-center justify-center rounded-lg bg-sky-400 px-5 font-semibold text-slate-950 transition hover:bg-sky-300"
+          >
+            Back Home
+          </a>
+
+          <a
+            href="/#projects"
+            class="inline-flex min-h-12 items-center justify-center rounded-lg border border-slate-700 bg-slate-900 px-5 font-semibold text-white transition hover:border-slate-500 hover:bg-slate-800"
+          >
+            View Projects
+          </a>
+        </div>
+
+        <div class="mt-12 border-t border-slate-800 pt-6">
+          <p class="font-mono text-xs uppercase tracking-[0.14em] text-slate-600">Adam Ziegler</p>
+
+          <p class="mt-2 text-sm text-slate-500">Software Engineer</p>
+        </div>
+      </div>
+    </main>
+
+    <Footer />
+  </body>
+</html>
