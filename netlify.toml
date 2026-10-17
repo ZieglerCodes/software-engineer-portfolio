@@ -2,3 +2,6 @@
 [build]
   command = "npm run verify"
   publish = "dist"
+
+  [build.environment]
+  NODE_VERSION = "22.22.3"
